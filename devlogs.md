@@ -9,10 +9,11 @@
 - changed all the ```.findById``` statements from callback to ```.then``` statements
     - passport.js
 
-- __Delete: __In posts.js, replaced ```Post.remove()``` with ```Post.findOneAndDelete```. Changed options in cloudinary to { invalidate:true }.
+- __Delete:__ In posts.js, replaced ```Post.remove()``` with ```Post.findOneAndDelete```. 
+    - Changed options in cloudinary to { invalidate:true }.
     - Not sure if cloudinary fix works, it did remove the image by the morning.
 
-- __Fixing the username/email: __ In posts.js ```.getProfile``` fixed the call for the user to deliver the entire document of the user.
+- __Fixing the username/email:__ In posts.js ```.getProfile``` fixed the call for the user to deliver the entire document of the user.
 ```
 const user = await User.findOne({ _id: req.user })
 console.log(user)
